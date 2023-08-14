@@ -1,7 +1,9 @@
 export function omit(obj: object, props: string[]) {
+  const _obj = structuredClone(obj);
+
   for (const prop of props) {
-    Reflect.deleteProperty(obj, prop);
+    Reflect.deleteProperty(_obj, prop);
   }
 
-  return obj;
+  return _obj;
 };
