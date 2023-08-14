@@ -2,9 +2,9 @@
   "name": "orbit",
   "version": "0.0.1",
   "description": "A modern utility library for typescript",
-  "main": "index.ts",
+  "main": "src/app.ts",
   "scripts": {
-    "dev": "ts-node index.ts",
+    "dev": "ts-node src/app.ts",
     "test": "jest"
   },
   "repository": {

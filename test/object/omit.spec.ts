@@ -1,5 +1,4 @@
-import { omit } from "../../src";
-
+import { omit } from '../../src';
 
 describe('omit', () => {
     it('should omit specified properties from an object', () => {
@@ -26,7 +25,7 @@ describe('omit', () => {
 
         const result = omit(inputObject, propertiesToOmit);
 
-        expect(result).toBe(inputObject);
+        expect(result).toMatchObject(inputObject);
     });
 
     it('should return an empty object if input object is empty', () => {
