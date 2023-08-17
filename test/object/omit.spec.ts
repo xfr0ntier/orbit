@@ -12,7 +12,7 @@ describe('omit', () => {
 
     it('should return the same object if no properties to omit', () => {
         const inputObject = { name: 'Alice', age: 25 };
-        const propertiesToOmit: string[] = [];
+        const propertiesToOmit: (keyof typeof inputObject)[] = [];
 
         const result = omit(inputObject, propertiesToOmit);
 
@@ -23,6 +23,7 @@ describe('omit', () => {
         const inputObject = { name: 'Bob', age: 40 };
         const propertiesToOmit = ['address', 'phone'];
 
+        //@ts-ignore
         const result = omit(inputObject, propertiesToOmit);
 
         expect(result).toMatchObject(inputObject);
@@ -31,7 +32,7 @@ describe('omit', () => {
     it('should return an empty object if input object is empty', () => {
         const inputObject = {};
         const propertiesToOmit = ['name', 'age'];
-
+        //@ts-ignore
         const result = omit(inputObject, propertiesToOmit);
 
         expect(result).toEqual({});
