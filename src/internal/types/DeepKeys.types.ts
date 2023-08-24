@@ -11,16 +11,20 @@ export type DeepKeys<T> = unknown extends T
     : T extends object
     ? (keyof T & string) | DeepKeysPrefix<T, keyof T>
     : never;
+
 type DeepKeysPrefix<T, TPrefix> = TPrefix extends keyof T & (number | string)
     ? `${TPrefix}.${DeepKeys<T[TPrefix]> & string}`
     : never;
+
 type ComputeRange<
     N extends number,
     Result extends Array<unknown> = []
 > = Result['length'] extends N
     ? Result
-    : ComputeRange<N, [...Result, Result['length']]>;
+    : ComputeRange<N, [...Result, Result['length']]>
+
 type Index40 = ComputeRange<40>[number];
+
 type IsTuple<T> = T extends readonly any[] & {
     length: infer Length;
 }
@@ -28,6 +32,7 @@ type IsTuple<T> = T extends readonly any[] & {
         ? T
         : never
     : never;
+
 type AllowedIndexes<
     Tuple extends ReadonlyArray<any>,
     Keys extends number = never
