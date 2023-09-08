@@ -11,6 +11,11 @@ describe('isObject', () => {
         expect(isObject(array)).toBe(false);
     });
 
+    it('should return false for a function', () => {
+        const func: unknown = () => {};
+        expect(isObject(func)).toBe(false);
+    });
+
     it('should return false for a primitive value', () => {
         const stringValue = 'hello';
         const numberValue = 42;

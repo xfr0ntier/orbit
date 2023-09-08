@@ -1,4 +1,4 @@
-import { DeepKeys } from 'src/internal';
+import { DeepKeys } from 'src/internal/types';
 
 export function deepOmit<T extends Record<any, any>>(
     obj: T,

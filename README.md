@@ -1,2 +1,3 @@
-# orbit
-A modern utility library for typescript.
+# Orbix
+
+A modern utility library for typescript, with zero dependencies.
