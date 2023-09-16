@@ -64,7 +64,6 @@ describe('toPlainObject', () => {
     it('should return a plain object for a simple object', () => {
         const inputObject = { key: 'value', num: 42 };
         const result = toPlainObject(inputObject);
-
         expect(result).toEqual(inputObject);
     });
 
@@ -84,10 +83,6 @@ describe('toPlainObject', () => {
         const inputObject = {
             fruits: ['apple', 'banana', 'cherry', 0, 1, 2],
         };
-
-        // TODO fix this case which aggregate array Object elements
-        // ref: https://stackoverflow.com/questions/34699529/convert-javascript-class-instance-to-plain-object-preserving-methods
-        console.log(Array.isArray(inputObject.fruits));
 
         const result = toPlainObject(inputObject);
         expect(result).toEqual(inputObject);
